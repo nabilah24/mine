@@ -95,7 +95,7 @@ body {
   .hero {
     min-height: auto;
     /* Hapus min-height untuk perangkat dengan tinggi layar kecil */
-    padding: 45vh 0;
+    padding: 30vh 0;
   }
 }
 
