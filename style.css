@@ -3,6 +3,7 @@
 @import url('https://fonts.cdnfonts.com/css/sensa-brush');
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Norican&display=swap');
 
+
 /* Reset and universal styles */
 *,
 *::before,
@@ -14,6 +15,7 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   height: 100%;
 }
@@ -24,8 +26,7 @@ body {
   flex-direction: column;
   margin: 0;
   line-height: normal;
-  overflow: hidden;
-  /* Disable scrolling */
+  overflow-x: hidden;
 }
 
 /* Sampul section */
@@ -33,6 +34,17 @@ body {
   background: url('./assets/images/bg-sampul.png') center center no-repeat;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  background: linear-gradient(#ffffff88 0%, #ffffff88 100%),
+    /* Transparan lebih tipis */
+    url('./assets/images/foto1.jpg') center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +61,34 @@ body {
 .logo img {
   width: 50%;
   max-width: 200px;
+}
+
+.logo-invit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo-invit img {
+  width: 40%;
+  /* Ukuran logo 25% */
+  max-width: 300px;
+}
+
+.hero-item {
+  margin-top: 25%;
+}
+
+@media (min-width: 768px) {
+  .hero-item {
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-item {
+    margin-top: 75%;
+  }
 }
 
 .judul {
@@ -165,7 +205,7 @@ body {
   }
 
   .countdown {
-    gap: 10px;
+    gap: 8px;
     /* Mengurangi jarak antar elemen */
   }
 }
@@ -174,13 +214,428 @@ body {
   .countdown__item {
     padding: 4px;
     font-size: 1.1rem;
-    /* Mengurangi ukuran font lebih kecil */
     min-width: 50px;
-    /* Mengurangi lebar minimum item lebih kecil */
   }
 
   .countdown {
     gap: 6px;
     /* Mengurangi gap lebih jauh pada layar kecil */
   }
+}
+
+.elementor-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  transform: scaleY(-1);
+}
+
+.elementor-shape-fill {
+  fill: white;
+}
+
+.pembuka {
+  background:
+    linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0) 10%),
+    url('./assets/images/bg-1.png') center center no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.pembuka h1 {
+  font-size: 2.5rem;
+}
+
+.pembuka img {
+  max-width: 250px;
+  margin-top: -6rem;
+}
+
+.pembuka h1 {
+  font-family: 'Amiri', serif;
+  font-size: 2.7rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.pembuka p {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 300;
+  max-width: 500px;
+}
+
+.pembuka h5 {
+  font-family: 'Amiri', serif;
+  font-size: 1.7rem;
+  color: #333333;
+}
+
+.pengantin {
+  background: linear-gradient(#0008 0 0),
+    url('./assets/images/bg-2.png') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  /* Tinggi sesuai dengan konten .back */
+}
+
+.back {
+  background: url('./assets/images/bg-2.png') center center no-repeat;
+  background-size: cover;
+  width: 90%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling untuk gambar di dalam elemen */
+.pengantin img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pengantin h1 {
+  font-size: 3rem;
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  color: black;
+}
+
+.pengantin p {
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10px;
+}
+
+@media (min-width: 768px) {
+
+  /* Tambahan styling untuk layar lebih besar */
+  .pengantin img {
+    margin-bottom: 0;
+    max-height: 300px;
+  }
+}
+
+.detail {
+  position: relative;
+  /* Elemen induk untuk positioning absolut */
+  background: url('./assets/images/bg-3.png') center center no-repeat, #f8f9fa;
+  background-size: cover;
+  /* Gambar background memenuhi seluruh elemen */
+  width: 100%;
+  min-height: 110vh;
+  /* Mencakup tinggi layar penuh */
+  display: flex;
+  flex-direction: column;
+  /* Menyusun elemen secara vertikal */
+  justify-content: center;
+  /* Menempatkan elemen di tengah secara vertikal */
+  align-items: center;
+  /* Menempatkan elemen di tengah secara horizontal */
+  text-align: center;
+  /* Memusatkan teks */
+  padding: 40px 0;
+  /* Memberikan jarak pada atas dan bawah */
+
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #bd8c39;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'TeXGyreTermes', sans-serif;
+}
+
+/* Styling for Akad Nikah card */
+.akad-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #bd8c39;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.akad-card .card-body {
+  padding: 30px;
+}
+
+.akad-card h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 15px;
+  font-family: 'TeXGyreTermes', sans-serif;
+}
+
+.akad-card h5 {
+  font-size: 2rem;
+  color: #555;
+  margin: 5px 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.detail p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.akad-card .text-bold {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for Resepsi card */
+.resepsi-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #bd8c39;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.resepsi-card .card-body {
+  padding: 30px;
+}
+
+.resepsi-card h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 15px;
+  font-family: 'TeXGyreTermes', sans-serif;
+}
+
+.resepsi-card h5 {
+  font-size: 2rem;
+  color: #555;
+  margin: 5px 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.resepsi-card .text-bold {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Button Styling */
+.btn-add-to-calendar,
+.btn-view-location {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 10px 5px;
+}
+
+.btn-add-to-calendar:hover,
+.btn-view-location:hover {
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.btn-add-to-calendar:focus,
+.btn-view-location:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(4, 4, 4, 4);
+}
+
+/* Make sure buttons align nicely */
+.card-body .col {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .akad-card .card-body h1,
+  .resepsi-card .card-body h1 {
+    font-size: 1.5rem;
+  }
+
+  .akad-card .card-body h5,
+  .resepsi-card .card-body h5 {
+    font-size: 1rem;
+  }
+
+  .akad-card,
+  .resepsi-card {
+    margin-bottom: 15px;
+  }
+
+  .btn-add-to-calendar,
+  .btn-view-location {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+.elemen {
+  position: absolute;
+  /* Agar tidak memengaruhi tata letak konten utama */
+  top: 0;
+  /* Dekorasi berada di pojok kanan atas */
+  right: 0;
+  z-index: 1;
+  /* Pastikan di belakang konten utama */
+}
+
+.bg-left {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail .container {
+  position: relative;
+  z-index: 10;
+}
+
+.lokasi {
+  background: linear-gradient(#0008 0 0),
+    url('./assets/images/bg-4.png') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.back-loc {
+  position: relative;
+  /* Menjadikan container sebagai referensi posisi elemen di dalamnya */
+  background: url('./assets/images/bg-5.png') center center no-repeat;
+  background-size: cover;
+  /* Gambar latar memenuhi container */
+  width: 90%;
+  min-height: 90vh;
+  /* Tinggi minimum container */
+  display: flex;
+  justify-content: center;
+  /* Opsional, bisa dihapus jika tidak diperlukan */
+  align-items: center;
+  /* Opsional, bisa dihapus jika tidak diperlukan */
+  overflow: hidden;
+  /* Agar elemen yang keluar tidak terlihat */
+}
+
+.elemen3 {
+  position: absolute;
+  /* Memungkinkan elemen berada relatif terhadap .back-loc */
+  bottom: 0;
+  /* Posisi di bawah container */
+  left: 0;
+  /* Posisi di kiri container */
+  height: auto;
+  /* Biarkan tinggi otomatis berdasarkan lebar */
+  max-height: 100%;
+  /* Batas maksimum tinggi mengikuti tinggi container */
+  width: auto;
+  /* Rasio proporsional dengan gambar */
+  object-fit: contain;
+  /* Menjaga proporsi gambar */
+}
+
+.peta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.peta h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  /* Batas lebar maksimum */
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #bd8c39;
+  border-radius: 8px;
+}
+
+/* Media Query untuk perangkat mobile */
+@media (max-width: 767px) {
+  .map-container {
+    padding-bottom: 150%;
+    /* Ubah aspect ratio menjadi potrait (lebih tinggi) */
+  }
+
+  .map-container iframe {
+    height: 100%;
+  }
+}
+
+.gmaps {
+  background-color: #bd8c39;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.gmaps:hover {
+  background-color: white;
+  color: #bd8c39;
+  border: 2px solid #bd8c39;
+  text-decoration: none;
+}
+
+.memory {
+  background:
+    url('./assets/images/bg-6.png') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
 }
