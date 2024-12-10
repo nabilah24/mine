@@ -243,7 +243,7 @@ body {
     linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0) 10%),
     url('./assets/images/bg-1.png') center center no-repeat;
   background-size: cover;
-  min-height: 70vh;
+  min-height: 62.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,7 +256,7 @@ body {
 
 .pembuka img {
   max-width: 250px;
-  margin-top: -6rem;
+  margin-top: -5rem;
 }
 
 .pembuka h1 {
@@ -352,8 +352,7 @@ body {
   /* Menempatkan elemen di tengah secara horizontal */
   text-align: center;
   /* Memusatkan teks */
-  padding: 40px 0;
-  /* Memberikan jarak pada atas dan bawah */
+
 
 }
 
