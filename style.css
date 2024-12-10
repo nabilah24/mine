@@ -73,12 +73,28 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  padding: 1rem;
+  /* Memberikan jarak kecil dari tepi */
 }
 
 .logo-invit img {
-  width: 40%;
-  /* Ukuran logo 25% */
-  max-width: 300px;
+  width: 20vw;
+  /* Ukuran logo mengikuti 20% lebar viewport */
+  max-width: 200px;
+  /* Batas maksimum ukuran logo */
+  min-width: 100px;
+  /* Batas minimum agar logo tidak terlalu kecil */
+}
+
+@media (max-width: 767px) {
+  .logo-invit img {
+    width: 30vw;
+    /* Ukuran lebih kecil pada layar kecil */
+    max-width: 150px;
+    /* Batas maksimum lebih kecil */
+    min-width: 80px;
+    /* Batas minimum lebih kecil */
+  }
 }
 
 .hero-item {
