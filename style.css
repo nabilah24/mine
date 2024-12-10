@@ -229,21 +229,6 @@ body {
   }
 }
 
-.elementor-shape {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  transform: scaleY(-1);
-}
-
-.elementor-shape-fill {
-  fill: white;
-}
-
 .pembuka {
   background:
     linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0) 10%),
