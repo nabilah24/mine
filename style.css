@@ -3,6 +3,7 @@
 @import url('https://fonts.cdnfonts.com/css/sensa-brush');
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Norican&display=swap');
 
+/* Reset and universal styles */
 *,
 *::before,
 *::after {
@@ -11,124 +12,84 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  width: 1rem;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10rem;
-  background: var(--light);
-  transition: all 0.5s ease-in-out;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #c73a52;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--dark);
-}
-
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-}
-
-@media (min-width: 1440px) {
-  html {
-    zoom: 1.5;
-  }
-}
-
-@media (min-width: 2560px) {
-  html {
-    zoom: 1.7;
-  }
-}
-
-@media (min-width: 3860px) {
-  html {
-    zoom: 2.5;
-  }
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  line-height: normal;
-  overflow-x: hidden;
-  overflow-y: auto;
-  /* menambahkan scroll otomatis jika konten melebihi tinggi layar */
-}
-
-.sampul {
-  background: url('./assets/images/bg-sampul.png') center center no-repeat;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  overflow: hidden;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin: 0;
+  line-height: normal;
+  overflow: hidden;
+  /* Disable scrolling */
 }
 
-.sampul * {
+/* Sampul section */
+.sampul {
+  background: url('./assets/images/bg-sampul.png') center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .kotak {
   border: 4px solid #bd8c39;
+  padding: 2rem;
   width: 100%;
-  height: auto;
+  max-width: 900px;
 }
 
-.logo {
-  display: flex;
-  /* Menggunakan Flexbox untuk menyelaraskan elemen */
-  justify-content: center;
-  /* Menyelaraskan logo secara horizontal di tengah */
-  align-items: center;
-  /* Menyelaraskan logo secara vertikal di tengah */
-  width: 100%;
-  /* Agar logo mengisi lebar kontainer */
-  max-width: 100%;
-  /* Menjaga agar logo tidak melebihi ukuran asli */
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    width: 35%;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    zoom: 0.85;
-    /* Ini akan membuat teks lebih kecil */
-  }
+.logo img {
+  width: 50%;
+  max-width: 200px;
 }
 
 .judul {
-  font-size: 30px;
+  font-size: 15px;
   font-family: 'TeXGyreTermes', sans-serif;
 }
 
 .nama {
-  font-size: 100px;
-  font-family: "Alex Brush", cursive;
+  font-size: 7rem;
+  font-family: 'Alex Brush', cursive;
   font-weight: 400;
   color: black;
 }
 
 .date h1,
-h2 {
-  font-size: 20px;
-  font-family: "Cormorant Garamond", serif;
+.year {
+  font-size: 1.7rem;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
-  font-style: normal;
+  text-align: center;
+}
+
+.location {
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  text-align: center;
+  max-width: 350px;
+  margin-top: 5px;
+}
+
+.time {
+  font-family: 'TeXGyreTermes', sans-serif;
+}
+
+.line-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .tombol {
@@ -140,4 +101,24 @@ h2 {
 .tombol:hover {
   color: white;
   background-color: #bd8c39;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .logo img {
+    width: 35%;
+  }
+
+  .nama {
+    font-size: 7rem;
+  }
+
+  .date h1,
+  .year {
+    font-size: 1.5rem;
+  }
+
+  .tombol {
+    font-size: 1.2rem;
+  }
 }
