@@ -42,7 +42,7 @@ body {
 .hero {
   background: linear-gradient(#ffffff88 0%, #ffffff88 100%),
     /* Transparan lebih tipis */
-    url('./assets/images/foto1.jpg') center center no-repeat;
+    url('./assets/images/foto-bg.jpg') center center no-repeat;
   background-size: cover;
   min-height: 100vh;
   display: flex;
