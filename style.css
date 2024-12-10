@@ -359,8 +359,6 @@ body {
   /* Menempatkan elemen di tengah secara horizontal */
   text-align: center;
   /* Memusatkan teks */
-
-
 }
 
 .heading {
@@ -447,8 +445,7 @@ body {
 }
 
 /* Button Styling */
-.btn-add-to-calendar,
-.btn-view-location {
+.btn-add-to-calendar {
   background-color: #000;
   color: white;
   border: none;
@@ -460,16 +457,14 @@ body {
   margin: 10px 5px;
 }
 
-.btn-add-to-calendar:hover,
-.btn-view-location:hover {
+.btn-add-to-calendar:hover {
   background-color: #fff;
   border: 2px solid #000;
   color: #000;
   transform: scale(1.05);
 }
 
-.btn-add-to-calendar:focus,
-.btn-view-location:focus {
+.btn-add-to-calendar:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(4, 4, 4, 4);
 }
@@ -527,6 +522,15 @@ body {
   z-index: 10;
 }
 
+@media (max-width: 767px) {
+  .bg-left {
+    transform: scale(2);
+      /* Membesarkan elemen */
+      transform-origin: top left;
+      /* Titik fokus zoom berada di pojok kiri atas */
+  }
+}
+
 .lokasi {
   background: linear-gradient(#0008 0 0),
     url('./assets/images/bg-4.png') center center no-repeat;
@@ -572,6 +576,15 @@ body {
   /* Menjaga proporsi gambar */
 }
 
+@media (max-width: 767px) {
+  .elemen3 {
+    transform: scale(3);
+    /* Membesarkan elemen */
+    transform-origin: bottom left;
+    /* Titik fokus zoom berada di pojok kiri atas */
+  }
+}
+
 .peta {
   display: grid;
   grid-template-columns: 1fr;
@@ -590,7 +603,7 @@ body {
 .map-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 100%;
   /* Batas lebar maksimum */
   padding-bottom: 56.25%;
   /* 16:9 aspect ratio */
@@ -610,7 +623,7 @@ body {
 /* Media Query untuk perangkat mobile */
 @media (max-width: 767px) {
   .map-container {
-    padding-bottom: 150%;
+    padding-bottom: 180%;
     /* Ubah aspect ratio menjadi potrait (lebih tinggi) */
   }
 
