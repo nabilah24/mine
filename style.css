@@ -122,3 +122,65 @@ body {
     font-size: 1.2rem;
   }
 }
+
+/* countdown */
+/* countdown */
+.countdown {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* Menjaga elemen tetap di satu baris */
+}
+
+.countdown__item {
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  /* Padding lebih kecil */
+  border-radius: 8px;
+  flex: 0 1 auto;
+  /* Menyesuaikan ukuran item dengan konten */
+  box-sizing: border-box;
+  /* Menjamin padding tidak mempengaruhi ukuran elemen */
+  min-width: 60px;
+  /* Lebar minimum yang lebih kecil */
+}
+
+.countdown__item span {
+  display: block;
+  font-size: 1.5rem;
+  /* Ukuran font lebih kecil */
+  font-weight: bold;
+}
+
+/* Responsivitas untuk layar lebih kecil */
+@media (max-width: 768px) {
+  .countdown__item {
+    padding: 5px;
+    font-size: 1.3rem;
+    /* Mengurangi ukuran font di layar kecil */
+  }
+
+  .countdown {
+    gap: 10px;
+    /* Mengurangi jarak antar elemen */
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown__item {
+    padding: 4px;
+    font-size: 1.1rem;
+    /* Mengurangi ukuran font lebih kecil */
+    min-width: 50px;
+    /* Mengurangi lebar minimum item lebih kecil */
+  }
+
+  .countdown {
+    gap: 6px;
+    /* Mengurangi gap lebih jauh pada layar kecil */
+  }
+}
