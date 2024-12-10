@@ -40,8 +40,14 @@ body {
 }
 
 .hero {
-  background: linear-gradient(#ffffff88 0%, #ffffff88 100%),
-    /* Transparan lebih tipis */
+  background: linear-gradient(to bottom,
+      #ffffff88 0%,
+      /* Transparan lebih tipis */
+      #ffffff88 90%,
+      /* Warna transparan hingga 90% */
+      #ffffff 100%
+      /* Putih solid di bagian bawah */
+    ),
     url('./assets/images/foto-bg.jpg') center center no-repeat;
   background-size: cover;
   min-height: 100vh;
