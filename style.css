@@ -43,7 +43,7 @@ body {
   background: linear-gradient(to bottom,
       #ffffff88 0%,
       /* Transparan lebih tipis */
-      #ffffff88 90%,
+      #ffffff88 80%,
       /* Warna transparan hingga 90% */
       #ffffff 100%
       /* Putih solid di bagian bawah */
