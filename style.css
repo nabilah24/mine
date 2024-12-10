@@ -45,6 +45,7 @@ body {
     url('./assets/images/foto-bg.jpg') center center no-repeat;
   background-size: cover;
   min-height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
