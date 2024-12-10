@@ -91,11 +91,11 @@ body {
   }
 }
 
-@media (max-height: 767px) {
+@media (min-height: 767px) {
   .hero {
     min-height: auto;
     /* Hapus min-height untuk perangkat dengan tinggi layar kecil */
-    padding: 50vh 0;
+    padding: 45vh 0;
   }
 }
 
