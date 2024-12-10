@@ -45,6 +45,7 @@ body {
     url('./assets/images/foto-bg.jpg') center center no-repeat;
   background-size: cover;
   min-height: 100vh;
+  /* Default untuk desktop */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,7 +95,18 @@ body {
 @media (max-height: 767px) {
   .hero {
     min-height: auto;
+    /* Hapus min-height */
     padding: 46vh 0;
+    /* Gunakan padding untuk tinggi */
+  }
+}
+
+@media (min-height: 767px) {
+  .hero {
+    min-height: 100vh;
+    /* Pastikan desktop tetap menggunakan 100vh */
+    padding: 0;
+    /* Hilangkan padding */
   }
 }
 
