@@ -1,0 +1,58 @@
+// Inisialisasi daftar ucapan dari localStorage
+let ucapanList = JSON.parse(localStorage.getItem('ucapanList')) || [];
+
+// Fungsi untuk render daftar ucapan
+function renderUcapan() {
+  const daftarUcapan = document.getElementById('daftarUcapan').querySelector('.card-body');
+  daftarUcapan.innerHTML = ''; // Bersihkan konten sebelumnya
+
+  ucapanList.forEach((ucapan, index) => {
+    const ucapanDiv = document.createElement('div');
+    ucapanDiv.classList.add('row', 'mb-4', 'my-5', 'mx-5');
+    ucapanDiv.innerHTML = `
+          <div class="card bg-white card-left">
+            <div class="card-body">
+              <h1 class="card-title">${ucapan.nama}</h1>
+              <h4 class="card-text">${ucapan.isi}</h4>
+              /*<button class="btn btn-danger btn-sm" onclick="hapusUcapan(${index})">Hapus</button>*/
+            </div>
+          </div>
+      `;
+    daftarUcapan.appendChild(ucapanDiv);
+  });
+}
+
+// Fungsi untuk menambahkan ucapan
+document.getElementById('ucapanForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nama = document.getElementById('nama').value.trim();
+  const ucapan = document.getElementById('ucapan').value.trim();
+
+  if (nama && ucapan) {
+    ucapanList.push({ nama, isi: ucapan });
+
+    // Simpan ke localStorage
+    localStorage.setItem('ucapanList', JSON.stringify(ucapanList));
+
+    // Render ulang daftar ucapan
+    renderUcapan();
+
+    // Reset form
+    e.target.reset();
+  }
+});
+
+// Fungsi untuk menghapus ucapan
+function hapusUcapan(index) {
+  ucapanList.splice(index, 1);
+
+  // Perbarui localStorage
+  localStorage.setItem('ucapanList', JSON.stringify(ucapanList));
+
+  // Render ulang daftar ucapan
+  renderUcapan();
+}
+
+// Render daftar ucapan saat halaman dimuat
+document.addEventListener('DOMContentLoaded', renderUcapan);

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 @import url('https://fonts.cdnfonts.com/css/sensa-brush');
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Norican&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Reset and universal styles */
 *,
@@ -27,16 +27,57 @@ body {
   margin: 0;
   line-height: normal;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Sampul section */
 .sampul {
-  background: url('./assets/images/bg-sampul.png') center center no-repeat;
+  background: url('./assets/images/bg-1.png') center center no-repeat;
   background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.dekor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .dekor {
+    transform: scale(0.25);
+    /* Membesarkan elemen */
+    transform-origin: top left;
+    /* Titik fokus zoom berada di pojok kiri atas */
+  }
+}
+
+.decor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .decor {
+    transform: scale(0.5);
+    /* Membesarkan elemen */
+    transform-origin: bottom right;
+    /* Titik fokus zoom berada di pojok kiri atas */
+  }
 }
 
 .hero {
@@ -154,10 +195,14 @@ body {
   border-top: 1px solid black;
 }
 
+
 .tombol {
+  position: relative;
   border: 2px solid #bd8c39;
   color: #bd8c39;
   font-weight: 700;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .tombol:hover {
@@ -506,7 +551,7 @@ body {
   /* Agar tidak memengaruhi tata letak konten utama */
   top: 0;
   /* Dekorasi berada di pojok kanan atas */
-  right: 0;
+  left: 0;
   z-index: 1;
   /* Pastikan di belakang konten utama */
 }
@@ -524,10 +569,10 @@ body {
 
 @media (max-width: 767px) {
   .bg-left {
-    transform: scale(2);
-      /* Membesarkan elemen */
-      transform-origin: top left;
-      /* Titik fokus zoom berada di pojok kiri atas */
+    transform: scale(0.5);
+    /* Membesarkan elemen */
+    transform-origin: top left;
+    /* Titik fokus zoom berada di pojok kiri atas */
   }
 }
 
@@ -578,7 +623,7 @@ body {
 
 @media (max-width: 767px) {
   .elemen3 {
-    transform: scale(3);
+    transform: scale(1.5);
     /* Membesarkan elemen */
     transform-origin: bottom left;
     /* Titik fokus zoom berada di pojok kiri atas */
@@ -603,7 +648,7 @@ body {
 .map-container {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: 800px;
   /* Batas lebar maksimum */
   padding-bottom: 56.25%;
   /* 16:9 aspect ratio */
@@ -623,7 +668,20 @@ body {
 /* Media Query untuk perangkat mobile */
 @media (max-width: 767px) {
   .map-container {
-    padding-bottom: 180%;
+    padding-bottom: 170%;
+    /* Ubah aspect ratio menjadi potret (lebih tinggi) */
+    width: 200px;
+  }
+
+  .map-container iframe {
+    height: 100%;
+  }
+}
+
+@media (min-width: 767px) {
+  .map-container {
+    padding-bottom: 60%;
+    width: 500px;
     /* Ubah aspect ratio menjadi potrait (lebih tinggi) */
   }
 
@@ -649,12 +707,233 @@ body {
   text-decoration: none;
 }
 
-.memory {
-  background:
-    url('./assets/images/bg-6.png') center center no-repeat;
+.galeri {
+  background: url('./assets/images/bg-6.png') center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: fit-content;
+}
+
+.galeri img {
+  box-shadow: 0 4px 8px #bd8c39;
+  border: none;
+  /* Membatasi tinggi maksimal gambar */
+  object-fit: cover;
+  /* Memastikan gambar terpotong dengan proporsional */
+}
+
+/* @media (max-width: 767px) {
+  .galeri img {
+    transform: scale(1);
+    gap: 0;
+  }
+} */
+
+.acara {
+  background: linear-gradient(#0008 0 0),
+    url('./assets/images/bg-4.png') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.acara-container {
+  position: relative;
+  /* Menjadikan container sebagai referensi posisi elemen di dalamnya */
+  background: url('./assets/images/bg-5.png') center center no-repeat;
+  background-size: cover;
+  /* Gambar latar memenuhi container */
+  width: 90%;
+  /* Tinggi minimum container */
+  display: flex;
+  justify-content: center;
+  /* Opsional, bisa dihapus jika tidak diperlukan */
+  align-items: center;
+  /* Opsional, bisa dihapus jika tidak diperlukan */
+  overflow: hidden;
+  /* Agar elemen yang keluar tidak terlihat */
+}
+
+.ucapan {
+  background: url('./assets/images/bg-6.png') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.kartu-ucapan {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #bd8c39;
+  border: none;
+  background-color: #fff;
+  /* margin-bottom: 20px; */
+  max-height: 75vh;
+  /* Adjusted for better scrollability */
+  overflow-y: auto;
+  /* Ensures vertical scrolling */
+}
+
+.card-left {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  border: none;
+  background-color: #fff;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.kartu-ucapan .card-body {
+  padding: 10px;
+}
+
+.kartu-ucapan h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 5px;
+  font-family: 'TeXGyreTermes', sans-serif;
+}
+
+.kartu-ucapan h4 {
+  font-size: 1.6rem;
+  color: #555;
+  margin: 3px 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.kirim-ucapan {
+  background: linear-gradient(#0008 0 0),
+    url('./assets/images/bg-4.png') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.kirim-ucapan .container {
+  position: relative;
+  /* Menjadikan container sebagai referensi posisi elemen di dalamnya */
+  background: url('./assets/images/bg-5.png') center center no-repeat;
+  background-size: cover;
+  /* Gambar latar memenuhi container */
+  width: 90%;
+  /* Tinggi minimum container */
+  display: flex;
+  justify-content: center;
+  /* Opsional, bisa dihapus jika tidak diperlukan */
+  align-items: center;
+  /* Opsional, bisa dihapus jika tidak diperlukan */
+  overflow: hidden;
+  /* Agar elemen yang keluar tidak terlihat */
+}
+
+.form-ucapan {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px black;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.tombol-kirim {
+  color: white;
+  background-color: #bd8c39;
+  font-weight: 700;
+}
+
+.tombol-kirim:hover {
+  border: 2px solid #bd8c39;
+  color: #bd8c39;
+}
+
+#ucapanForm .form-control:focus {
+  box-shadow: 0 4px 8px #bd8c39;
+  border-color: #bd8c39;
+}
+
+/* Menyesuaikan ukuran font input, textarea, dan tombol */
+#ucapanForm .form-control,
+.form-label {
+  font-size: 16px;
+  /* Sesuaikan ukuran font yang diinginkan */
+}
+
+/* Menambahkan style lainnya jika diperlukan */
+.form-label {
+  font-weight: bold;
+  /* Agar label lebih terlihat */
+}
+
+.swal2-popup {
+  width: 400px;
+  /* Mengatur lebar kotak alert */
+  padding: 20px;
+  /* Memberikan padding lebih banyak */
+  border-radius: 10px;
+  /* Memberikan sudut rounded pada kotak alert */
+}
+
+/* Mengubah ukuran teks di dalam alert */
+.swal2-title {
+  font-size: 30px;
+  /* Ukuran teks judul */
+  text-align: center;
+  /* Menyusun judul di tengah */
+}
+
+.swal2-html-container {
+  font-size: 18px;
+  /* Ukuran teks konten */
+  text-align: center;
+  /* Menyusun konten di tengah */
+}
+
+.smiley {
+  font-size: 100px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.smiley:hover {
+  transform: rotate(15deg) scale(1.2);
+  color: yellow;
+}
+
+.elemen2 {
+  transform: scaleY(-1);
+  /* Membalik gambar secara vertikal */
+  width: 25%;
+  /* Mengatur lebar gambar menjadi 25% dari elemen induk */
+  height: auto;
+  /* Menjaga proporsi gambar */
+}
+
+@media (max-width: 767px) {
+  .elemen2 {
+    width: 100%;
+    /* Menjaga lebar gambar tetap 25% pada layar lebih besar */
+    height: auto;
+    /* Menjaga proporsi gambar */
+  }
+}
+
+.footer {
+  min-height: 25vh;
+  width: 100%;
+}
+
+.mylogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #3e424e;
+  font-family: "Montserrat Alternates",
+    sans-serif;
 }
