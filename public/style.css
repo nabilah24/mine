@@ -32,7 +32,7 @@ body {
 
 /* Sampul section */
 .sampul {
-  background: url('./assets/images/bg-1.png') center center no-repeat;
+  background: url('./images/bg-1.png') center center no-repeat;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -84,12 +84,12 @@ body {
   background: linear-gradient(to bottom,
       #ffffff88 0%,
       /* Transparan lebih tipis */
-      #ffffff88 50%,
+      #ffffff88 60%,
       /* Warna transparan hingga 90% */
       #ffffff 100%
       /* Putih solid di bagian bawah */
     ),
-    url('./assets/images/foto-bg.jpg') center center no-repeat;
+    url('./images/foto-bg.jpg') center center no-repeat;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -293,7 +293,7 @@ body {
 .pembuka {
   background:
     linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0) 10%),
-    url('./assets/images/bg-1.png') center center no-repeat;
+    url('./images/bg-1.png') center center no-repeat;
   background-size: cover;
   min-height: 62.5vh;
   display: flex;
@@ -333,7 +333,7 @@ body {
 
 .pengantin {
   background: linear-gradient(#0008 0 0),
-    url('./assets/images/bg-2.png') center center no-repeat;
+    url('./images/bg-2.png') center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -343,7 +343,7 @@ body {
 }
 
 .back {
-  background: url('./assets/images/bg-2.png') center center no-repeat;
+  background: url('./images/bg-2.png') center center no-repeat;
   background-size: cover;
   width: 90%;
   min-height: 90vh;
@@ -389,7 +389,7 @@ body {
 .detail {
   position: relative;
   /* Elemen induk untuk positioning absolut */
-  background: url('./assets/images/bg-3.png') center center no-repeat, #f8f9fa;
+  background: url('./images/bg-3.png') center center no-repeat, #f8f9fa;
   background-size: cover;
   /* Gambar background memenuhi seluruh elemen */
   width: 100%;
@@ -578,7 +578,7 @@ body {
 
 .lokasi {
   background: linear-gradient(#0008 0 0),
-    url('./assets/images/bg-4.png') center center no-repeat;
+    url('./images/bg-4.png') center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -589,7 +589,7 @@ body {
 .back-loc {
   position: relative;
   /* Menjadikan container sebagai referensi posisi elemen di dalamnya */
-  background: url('./assets/images/bg-5.png') center center no-repeat;
+  background: url('./images/bg-5.png') center center no-repeat;
   background-size: cover;
   /* Gambar latar memenuhi container */
   width: 90%;
@@ -708,7 +708,7 @@ body {
 }
 
 .galeri {
-  background: url('./assets/images/bg-6.png') center center no-repeat;
+  background: url('./images/bg-6.png') center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -733,7 +733,7 @@ body {
 
 .acara {
   background: linear-gradient(#0008 0 0),
-    url('./assets/images/bg-4.png') center center no-repeat;
+    url('./images/bg-4.png') center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -744,7 +744,7 @@ body {
 .acara-container {
   position: relative;
   /* Menjadikan container sebagai referensi posisi elemen di dalamnya */
-  background: url('./assets/images/bg-5.png') center center no-repeat;
+  background: url('./images/bg-5.png') center center no-repeat;
   background-size: cover;
   /* Gambar latar memenuhi container */
   width: 90%;
@@ -759,7 +759,7 @@ body {
 }
 
 .ucapan {
-  background: url('./assets/images/bg-6.png') center center no-repeat;
+  background: url('./images/bg-6.png') center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -808,7 +808,7 @@ body {
 
 .kirim-ucapan {
   background: linear-gradient(#0008 0 0),
-    url('./assets/images/bg-4.png') center center no-repeat;
+    url('./images/bg-4.png') center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -819,7 +819,7 @@ body {
 .kirim-ucapan .container {
   position: relative;
   /* Menjadikan container sebagai referensi posisi elemen di dalamnya */
-  background: url('./assets/images/bg-5.png') center center no-repeat;
+  background: url('./images/bg-5.png') center center no-repeat;
   background-size: cover;
   /* Gambar latar memenuhi container */
   width: 90%;
